@@ -11,16 +11,17 @@ type Service struct {
 }
 
 type Version struct {
-	VersionId  string    `gorm:"size:255;primary_key;not null;unique" json:"versionId"`
-	ServiceId  string    `gorm:"size:255;not null;" json:"serviceId"`
-	Version    string    `gorm:"size:255;not null" json:"version"`
-	GitHash    string    `gorm:"size:255;not null" json:"gitHash"`
-	CreateTime time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"createTime"`
+	VersionId     string    `gorm:"size:255;primary_key;not null;unique;" json:"versionId"`
+	VersionNumber string    `gorm:"size:255;not null;" json:"versionNumber"`
+	ServiceId     string    `gorm:"size:255;not null;" json:"serviceId"`
+	Version       string    `gorm:"size:255;not null" json:"version"`
+	GitHash       string    `gorm:"size:255;not null" json:"gitHash"`
+	CreateTime    time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"createTime"`
 }
 
 type CreateRequest struct {
-	ServiceId string `gorm:"size:255;not null" json:"serviceId"`
-	VersionId string `gorm:"size:255;not null" json:"versionId"`
-	Version   string `gorm:"size:255;not null" json:"version"`
-	GitHash   string `gorm:"size:255;not null" json:"gitHash"`
+	ServiceId     string `gorm:"size:255;not null" json:"serviceId"`
+	VersionNumber string `gorm:"size:255;not null" json:"versionNumber"`
+	Version       string `gorm:"size:255;not null" json:"version"`
+	GitHash       string `gorm:"size:255;not null" json:"gitHash"`
 }
